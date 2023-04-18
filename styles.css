@@ -500,7 +500,7 @@ a[data-fancybox] img {
 .featurette-icon {
   display: block;
   width: 100%;
-  color: #8e191d;
+  color: #155aaa;
   font-size: 3rem;
   text-align: center;
 }
@@ -717,7 +717,7 @@ article .article-metadata {
 }
 
 .article-metadata a:hover {
-  color: #8e191d;
+  color: #155aaa;
 }
 
 .middot-divider {
@@ -1081,8 +1081,8 @@ a.label:hover {
  **************************************************/
 
 .btn-primary {
-  border-color: #8e191d !important;
-  background: #8e191d !important;
+  border-color: #155aaa !important;
+  background: #155aaa !important;
 }
 
 .btn-primary:hover,
@@ -1090,7 +1090,7 @@ a.label:hover {
 .btn-primary.active,
 .btn-primary:visited,
 .open > .dropdown-toggle.btn-primary {
-  background: #8e191d !important;
+  background: #155aaa !important;
 }
 
 .btn-light {
@@ -1143,12 +1143,12 @@ a.label:hover {
 }
 
 .btn-primary.btn-outline {
-  color: #8e191d !important;
-  border-color: #8e191d !important;
+  color: #155aaa !important;
+  border-color: #155aaa !important;
 }
 
 .btn-primary.btn-outline:focus {
-  color: #8e191d !important;
+  color: #155aaa !important;
 }
 
 .btn-primary.btn-outline:active {
@@ -1202,7 +1202,7 @@ a.label:hover {
 }
 
 .navbar-default {
-  background: #8e191d;
+  background: #155aaa;
   box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.11)
 }
 
@@ -1264,7 +1264,7 @@ nav#navbar-main li {
 }
 
 .dropdown-menu {
-  background-color: #8e191d !important;
+  background-color: #155aaa !important;
 }
 
 .dropdown-menu > li > a {
@@ -1281,13 +1281,13 @@ nav#navbar-main li {
 .dropdown-menu>li>a:hover {
   color: #ed8674;
   text-decoration: none;
-  background-color: #8e191d;
+  background-color: #155aaa;
 }
 
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:focus,
 .dropdown-menu > .active > a:hover {
-  color: #8e191d;
+  color: #155aaa;
   text-decoration: none;
   background-color: #ed8674;
   outline: 0;
@@ -1298,7 +1298,7 @@ nav#navbar-main li {
 .navbar-default .navbar-nav>.open>a:hover,
 .navbar-default .navbar-nav>.open>a:visited {
   color: #fff !important;
-  background-color: #8e191d !important;
+  background-color: #155aaa !important;
 }
 
 .navbar-default .navbar-brand {
@@ -1566,7 +1566,7 @@ body.dark {
 }
 
 .dark ul.share li a {
-  background-color: #8e191d;
+  background-color: #155aaa;
 }
 
 .dark table table {
@@ -1620,7 +1620,7 @@ body.dark {
 }
 
 .dark .card h4 a {
-  color: #8e191d;
+  color: #155aaa;
   border-bottom: solid 1px transparent;
 }
 
