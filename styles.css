@@ -1242,7 +1242,7 @@ nav#navbar-main li {
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover {
-  color: #ed8674;
+  color: #155aaa;
   font-weight: 700;
   background-color: transparent !important; /* Override Bootstrap. */
 }
