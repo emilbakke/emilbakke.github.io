@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Demo on Friedolin Merhout</title>
+    <title>Demo on Emil Bakkensen Johansen</title>
     <link>/tags/demo/</link>
-    <description>Recent content in Demo on Friedolin Merhout</description>
+    <description>Recent content in Demo on Emil Bakkensen Johansen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018 Friedolin Merhout</copyright>
+    <copyright>&amp;copy; 2018 Emil Bakkensen Johansen</copyright>
     <lastBuildDate>Wed, 27 Apr 2016 00:00:00 -0400</lastBuildDate>
     
 	<atom:link href="/tags/demo/index.xml" rel="self" type="application/rss+xml" />
