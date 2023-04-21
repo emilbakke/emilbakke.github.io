@@ -13,83 +13,11 @@
     
     
     <item>
-      <title>#eurocss</title>
-      <link>/tags/eurocss/</link>
+      <title>TAG TITLE</title>
+      <link>/tags/TAG_FOLDER/</link>
       <pubDate>Wed, 22 Aug 2018 00:00:00 +0200</pubDate>
       
-      <guid>/tags/eurocss/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nazi biograms</title>
-      <link>/tags/nazi-biograms/</link>
-      <pubDate>Wed, 22 Aug 2018 00:00:00 +0200</pubDate>
-      
-      <guid>/tags/nazi-biograms/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>/tags/r/</link>
-      <pubDate>Wed, 22 Aug 2018 00:00:00 +0200</pubDate>
-      
-      <guid>/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SICSS</title>
-      <link>/tags/sicss/</link>
-      <pubDate>Thu, 22 Aug 2019 00:00:00 +0200</pubDate>
-      
-      <guid>/tags/sicss/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>computational social science</title>
-      <link>/tags/computational-social-science/</link>
-      <pubDate>Thu, 22 Aug 2019 00:00:00 +0200</pubDate>
-      
-      <guid>/tags/computational-social-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>quantitative text analysis</title>
-      <link>/tags/quantitative-text-analysis/</link>
-      <pubDate>Wed, 22 Aug 2018 00:00:00 +0200</pubDate>
-      
-      <guid>/tags/quantitative-text-analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>textnets</title>
-      <link>/tags/textnets/</link>
-      <pubDate>Wed, 22 Aug 2018 00:00:00 +0200</pubDate>
-      
-      <guid>/tags/textnets/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ucla</title>
-      <link>/tags/ucla/</link>
-      <pubDate>Thu, 22 Aug 2019 00:00:00 +0200</pubDate>
-      
-      <guid>/tags/ucla/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>workshop</title>
-      <link>/tags/workshop/</link>
-      <pubDate>Wed, 22 Aug 2018 00:00:00 +0200</pubDate>
-      
-      <guid>/tags/workshop/</guid>
+      <guid>/tags/TAG_FOLDER/</guid>
       <description></description>
     </item>
     
