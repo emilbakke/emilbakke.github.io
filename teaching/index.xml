@@ -13,12 +13,12 @@
     
     
     <item>
-      <title>More Than Words: Introduction to Quantitative Text Analysis</title>
-      <link>/teaching/mtw/</link>
+      <title>COURSE TITLE</title>
+      <link>/teaching/COURSE_FOLDER/</link>
       <pubDate>Wed, 22 Aug 2018 00:00:00 +0200</pubDate>
       
       <guid>/teaching/mtw/</guid>
-      <description>This course was offered in the Spring 2021 at the University of Copenhagen&amp;rsquo;s Department of Sociology. The background readings for the course come from Gabriel Ignatow and Rada Mihalcea&amp;rsquo;s Text Mining: A Guidebook for the Social Sciences while much of the applied readings come from Julia Silge and David Robinson&amp;rsquo;s Text Mining with R and Emil Hvitfeldt and Julia Silge&amp;rsquo;s Supervised Machine Learning for Text Analysis in R. You can find the course syllabus here and further course information on the university&amp;rsquo;s course listing site.</description>
+      <description>DESCRIPTION OF COURSE</description>
     </item>
     
   </channel>
