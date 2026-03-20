@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Public technical overview of AI ValgChat FV26, a Danish election chatbot built for dialogue-based political information and voting advice.">
+  <meta name="theme-color" content="#3f51b5">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto+Mono">
+  <link rel="stylesheet" href="/styles.css">
+
+  <link rel="canonical" href="/project/ai-valgchat-fv26/">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <meta property="og:site_name" content="Emil Bakkensen Johansen">
+  <meta property="og:url" content="/project/ai-valgchat-fv26/">
+  <meta property="og:title" content="AI ValgChat FV26 | Emil Bakkensen Johansen">
+  <meta property="og:description" content="Public technical overview of AI ValgChat FV26.">
+  <meta property="og:image" content="/img/headers/bubbles-wide.jpg">
+  <meta property="og:locale" content="en-us">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:site" content="@emilbakke">
+  <meta property="twitter:creator" content="@emilbakke">
+
+  <title>AI ValgChat FV26 | Emil Bakkensen Johansen</title>
+
+  <style>
+    .article-style h2 { margin-top: 2.2rem; }
+    .article-style h3 { margin-top: 1.5rem; }
+    .article-style ul { margin-bottom: 1.2rem; }
+    .article-style p, .article-style li { line-height: 1.72; }
+    .tech-note {
+      display: inline-block;
+      font-size: 0.95rem;
+      color: #54606e;
+      background: #f6f8fb;
+      border: 1px solid #d7dee8;
+      border-radius: 6px;
+      padding: 0.45rem 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.25rem 0 1.5rem;
+    }
+    .stack-card {
+      border: 1px solid #d9e1ea;
+      border-radius: 8px;
+      padding: 1rem 1.1rem;
+      background: #fafbfd;
+    }
+    .stack-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.35rem;
+      font-size: 1.05rem;
+    }
+    .stack-card p {
+      margin-bottom: 0;
+      color: #54606e;
+    }
+    .article-banner { object-position: center 40%; }
+  </style>
+</head>
+<body id="top">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Emil Bakkensen Johansen</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item"><a href="/#about"><span>Home</span></a></li>
+        <li class="nav-item"><a href="/#projects"><span>Projects</span></a></li>
+        <li class="nav-item"><a href="/#posts"><span>Posts</span></a></li>
+        <li class="nav-item"><a href="/#contact"><span>Contact</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<article class="article article-project" itemscope itemtype="http://schema.org/Article">
+  <div class="article-header">
+    <img src="/img/headers/bubbles-wide.jpg" class="article-banner" itemprop="image" alt="AI ValgChat FV26 header image">
+  </div>
+
+  <div class="article-container">
+    <div class="pub-title">
+      <h1 itemprop="name">AI ValgChat FV26</h1>
+      <span class="pub-authors" itemprop="author">Public technical overview</span>
+    </div>
+
+    <div class="article-style" itemprop="articleBody">
+      <p class="tech-note">This page is a public-facing technical overview of the system. It explains how the chatbot works at a meaningful level without exposing internal operating details.</p>
+
+      <p><strong>AI ValgChat FV26</strong> is a Danish election chatbot designed to help users explore party positions, compare parties on political issues, ask factual questions, and have dialogue-based conversations about which parties may best match their priorities.</p>
+
+      <p>The system is both a public-facing tool and a research instrument. One core goal is to study how people actually use conversational AI in a democratic context, including where such systems are useful and where they fail.</p>
+
+      <h2>System architecture</h2>
+
+      <p>At a high level, AI ValgChat FV26 is built as a small application stack with a few distinct layers:</p>
+
+      <div class="stack-grid">
+        <div class="stack-card">
+          <h3>Flask application</h3>
+          <p>The web app handles the chat interface, session state, routing logic, guardrails, feedback handling, and recommendation flow.</p>
+        </div>
+        <div class="stack-card">
+          <h3>Open WebUI on UCloud</h3>
+          <p>The model-serving layer is accessed through an Open WebUI server running on UCloud.</p>
+        </div>
+        <div class="stack-card">
+          <h3>Ollama backend</h3>
+          <p>Model inference is served through an Ollama backend used by the Open WebUI setup.</p>
+        </div>
+        <div class="stack-card">
+          <h3>Language model</h3>
+          <p>The system uses the open-source large language model <a href="https://www.openeurollm.eu/" target="_blank" rel="noopener">OpenEuroLLM-Danish</a> from the OpenEuroLLM project.</p>
+        </div>
+      </div>
+
+      <p>In the current setup, inference runs on <strong>2 × NVIDIA A100 40GB GPUs</strong>. That is worth mentioning because it gives a more realistic sense of the compute involved in a responsive public-facing chatbot with retrieval and multi-turn dialogue.</p>
+
+      <p>In practice, the app does not simply pass the user message directly to the model. It first decides what type of question the user is asking and how much structure the response should have, and it can route different question types through different handling paths.</p>
+
+      <h2>Main response modes</h2>
+
+      <h3>1. Fact-oriented party questions</h3>
+      <p>For a subset of core factual questions, the system can answer from curated structured data rather than relying entirely on generation. This is used to make answers about basic party facts more stable.</p>
+      <ul>
+        <li>party leader</li>
+        <li>founding year</li>
+        <li>ideological self-description</li>
+      </ul>
+      <p>This reduces the risk of the model hallucinating simple factual information.</p>
+
+      <h3>2. Retrieval-based political answers</h3>
+      <p>For broader political questions, the app retrieves relevant party materials from curated knowledge collections and passes those materials into the response generation step.</p>
+      <p>This makes the system more grounded than a pure free-form chatbot because it is guided by party-specific source material rather than only by the model’s general training.</p>
+
+      <h3>3. Dialogue-based voting advice</h3>
+      <p>When users ask which parties match their views, the app switches into a more structured recommendation mode. In this mode, it can ask follow-up questions and refine its suggestions over several turns.</p>
+      <p>The system keeps a lightweight session-level representation of the user’s stated priorities so that the recommendation flow can remain coherent across multiple turns. This matters especially when users answer incrementally, refine a previous answer, or respond with short follow-up replies such as <code>ja</code>, <code>nej</code>, or <code>det er vigtigt</code>.</p>
+      <p>The app also exerts more control over follow-up questions so that the visible question matches the app’s internal dialogue state more closely and the overall interaction feels more like a conversation than a survey.</p>
+
+      <h2>Recommendation philosophy</h2>
+      <p>The system does not use a fixed hand-coded party scoring formula. Recommendations are still generated by the language model, but they are guided by:</p>
+      <ul>
+        <li>curated party-specific knowledge sources</li>
+        <li>structured session-level preference information</li>
+        <li>follow-up question handling in the application layer</li>
+      </ul>
+      <p>So the app does not replace the model with a deterministic score engine. Instead, it tries to make the model’s recommendation process more consistent and more context-aware.</p>
+      <p>This means AI ValgChat FV26 is not just a static questionnaire in chat form. It is a hybrid system where parts of the logic live in the application layer and parts live in the language model.</p>
+
+      <h2>Source material</h2>
+      <p>The system relies on curated political source material prepared for retrieval. At a high level, these materials include:</p>
+      <ul>
+        <li>party principle programmes where parties publish them</li>
+        <li>policy text from official public party websites for parties that do not have a principle programme in the same form</li>
+        <li>Danish Wikipedia pages about all included parties</li>
+        <li>cleaned party-specific retrieval bundles prepared from these materials</li>
+      </ul>
+      <p>The goal is not to mirror the entire internet, but to work from a more controlled and inspectable set of political materials.</p>
+      <p>At a high level, the retrieval setup is party-specific: the system does not search one undifferentiated political corpus, but works with party-linked collections so that it can ground answers in material associated with the relevant parties.</p>
+
+      <h2>Why not just use a general chatbot?</h2>
+      <p>One motivation behind the project is that people already use general-purpose chatbots for political questions, but those systems are typically:</p>
+      <ul>
+        <li>harder to inspect</li>
+        <li>harder to study empirically</li>
+        <li>less transparent in how they handle political dialogue</li>
+        <li>not designed specifically for Danish election use</li>
+      </ul>
+      <p>This project therefore explores what a more controlled and research-oriented election chatbot can look like in a Danish election setting.</p>
+
+      <h2>Research relevance</h2>
+      <p>The project is not only about building a useful interface. It is also about understanding:</p>
+      <ul>
+        <li>what people ask political chatbots</li>
+        <li>how they respond to different answer styles</li>
+        <li>how recommendation conversations evolve over multiple turns</li>
+        <li>where AI systems become overconfident, overly rigid, or internally inconsistent</li>
+      </ul>
+      <p>This means the system is both a public-facing tool and a way of studying the opportunities and risks of AI in democratic settings.</p>
+
+      <h2>Feedback and user experience</h2>
+      <p>The interface includes lightweight response feedback so users can indicate whether a response was helpful. That feedback is useful both for evaluating the system and for understanding where the chatbot’s recommendations or explanations feel unhelpful to users.</p>
+      <p>From a technical point of view, the interface is also designed to support multi-turn dialogue rather than only one-shot answers. That makes it possible to study how recommendation conversations evolve over time, not just what the model says in response to a single prompt.</p>
+
+      <h2>Scope and limitations</h2>
+      <p>The chatbot is designed for political information and voting-advice style conversations in a Danish election context. It is not meant to replace official party materials, public debate, or independent judgement.</p>
+      <p>As with any AI system, outputs should be treated as support for reflection and orientation, not as authoritative truth.</p>
+
+      <h2>What this page leaves out</h2>
+      <p>This page intentionally does not include:</p>
+      <ul>
+        <li>operational deployment details</li>
+        <li>internal infrastructure URLs</li>
+        <li>runtime secrets or admin procedures</li>
+        <li>sensitive maintenance workflows</li>
+      </ul>
+      <p>The purpose of this page is to explain how AI ValgChat FV26 works at a meaningful technical level, not to publish internal operating instructions.</p>
+    </div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by"><a href="/privacy/">Privacy Policy</a></p>
+    <p class="powered-by">Published on <a href="https://emilbakke.github.io/">emilbakke.github.io</a></p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
