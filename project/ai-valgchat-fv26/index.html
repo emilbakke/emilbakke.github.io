@@ -34,6 +34,23 @@
     .article-style h3 { margin-top: 1.5rem; }
     .article-style ul { margin-bottom: 1.2rem; }
     .article-style p, .article-style li { line-height: 1.72; }
+    .inline-ui-preview {
+      margin: 1.4rem auto 1.6rem;
+      max-width: 520px;
+      text-align: center;
+    }
+    .inline-ui-preview img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #d9e1ea;
+      border-radius: 8px;
+      box-shadow: 0 8px 22px rgba(33, 44, 63, 0.08);
+    }
+    .inline-ui-preview figcaption {
+      margin-top: 0.55rem;
+      font-size: 0.9rem;
+      color: #667085;
+    }
     .tech-note {
       display: inline-block;
       font-size: 0.95rem;
@@ -93,10 +110,6 @@
 </nav>
 
 <article class="article article-project" itemscope itemtype="http://schema.org/Article">
-  <div class="article-header">
-    <img src="/img/valgchat_ui.png" class="article-banner" itemprop="image" alt="AI ValgChat FV26 header image">
-  </div>
-
   <div class="article-container">
     <div class="pub-title">
       <h1 itemprop="name">AI ValgChat FV26</h1>
@@ -104,9 +117,14 @@
 
     <div class="article-style" itemprop="articleBody">
 
-      <p><strong>AI ValgChat FV26</strong> is a Danish election chatbot designed to help users explore party positions, compare parties on political issues, ask factual questions, and have dialogue-based conversations about which parties may best match their priorities.</p>
+      <p><strong><a href="https://app-ddc-fv26.cloud.sdu.dk/" target="_blank" rel="noopener">AI ValgChat FV26</a></strong> is a Danish election chatbot designed to help users explore party positions, compare parties on political issues, ask factual questions, and have dialogue-based conversations about which parties may best match their priorities.</p>
 
       <p>The system is both a public-facing tool and a research instrument. One core goal is to study how people actually use conversational AI in a democratic context, including where such systems are useful and where they fail.</p>
+
+      <figure class="inline-ui-preview">
+        <img src="/img/valgchat_ui.png" alt="AI ValgChat FV26 user interface preview">
+        <figcaption>Interface preview of AI ValgChat FV26.</figcaption>
+      </figure>
 
       <h2>System architecture</h2>
 
